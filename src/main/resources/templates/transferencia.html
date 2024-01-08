@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Transferencias</title>
+</head>
+<body>
+	<h1>Extraer dinero en la cuenta: <span th:text="${session.cuenta.idCuenta}"></span></h1>
+	<br/>
+	<h3 th:text="${mensaje}"></h3>
+	<br/>
+	
+	<form th:action="@{/cuenta/transferencia}" method="post">
+		<p><label for="idCuenta"> Introduce la cuenta donde quieres realizar la transferencia</label></p>
+		<input type="text" name="idCuenta" placeholder="nº de Cuenta">
+		<br/>
+		<p><label for="saldo"> Introduce la cantidad a transferir</label></p>
+		<input type="text" name="cantidad" placeholder="cantidad">
+		<br/>
+		<br/>
+		<input type="submit" value="Transferir">
+	</form>	
+	<br>
+	<div>
+		<a th:href="@{/home}">Volver a la home</a>
+	</div>	
+	<div>
+		<a th:href="@{/logout}">Log Out</a>
+	</div>
+</body>
+</html>

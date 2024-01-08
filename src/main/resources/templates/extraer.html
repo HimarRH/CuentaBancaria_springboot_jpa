@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Extraer dinero</title>
+</head>
+<body>
+	<h1>Extraer dinero en la cuenta: <span th:text="${session.cuenta.idCuenta}"></span></h1>
+	<br/>
+	<h3 th:text="${mensaje}"></h3>
+	
+	<form th:action="@{/cuenta/extraer}" method="post">
+		<p><label for="saldo"> Introduce la cantidad a extraer</label></p>
+		<input type="text" name="cantidad" placeholder="cantidad">
+		<br/>
+		<input type="submit" value="Extraer">
+	</form>	
+	<br>
+	<div>
+		<a th:href="@{/home}">Volver a la home</a>
+	</div>	
+	<div>
+		<a th:href="@{/logout}">Log Out</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Bienvenido a su cuenta <span th:text="${session.cuenta.idCuenta}"></span></h1>
+	<br/>
+	<h3> El saldo actual de la cuenta es: <span th:text="${session.cuenta.saldo}"></span></h3>
+	<h3 th:text="${mensaje}"></h3>
+	<div>
+		<a th:href="@{/cuenta/ingresar}">Ingresar</a>
+	</div>
+	<div>
+		<a th:href="@{/cuenta/extraer}">Extraer</a>
+	</div>
+	<div>
+		<a th:href="@{/cuenta/movimientos/{id}(id=${session.cuenta.idCuenta})}">Ver movimientos</a>
+	</div>
+	<div>
+		<a th:href="@{/cuenta/transferencia}">Transferencia</a>
+	</div>
+	<div>
+		<a th:href="@{/logout}">Cerrar Sesión</a>
+	</div>
+
+</body>
+</html>

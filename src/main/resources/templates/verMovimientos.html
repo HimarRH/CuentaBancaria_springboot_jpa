@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Movimientos</title>
+</head>
+<body>
+	<h1> Aquí tiene todos los movimientos de la cuenta : <span th:text="${session.cuenta.idCuenta}"></span></h1>
+	<br/>
+	<h3> El saldo acutal de esta cuenta es: <span th:text="${session.cuenta.saldo}"></span></h3>
+	
+	<table border="1" width=80% style="border-color: aqua;">
+        <tr>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Tipo</th>
+        </tr>
+        <tr th:each="movimiento: ${movimiento}">
+			<th th:text="${movimiento.cantidad}"></th>
+			<th th:text="${movimiento.fecha}"></th>
+			<th th:text="${movimiento.operacion}"></th>
+        </tr>
+	</table>
+	<br/>
+	<div>
+		<a th:href="@{/home}">Volver a la home</a>
+	</div>	
+	<div>
+		<a th:href="@{/logout}">Log Out</a>
+	</div>
+
+		   
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Bienvenido a la cuenta de su banco</h1>
+	<br/>
+	<h3>Introduzca la cuenta a la que desea acceder</h3>
+	<form th:action="@{/login}" method="post">
+		<p><input type="text" name="idCuenta" placeholder="nº de cuenta"></p>
+		
+		<p><input type="submit" value="Acceder">
+	</form>
+	<h4 th:text="${mensaje}"></h4>
+
+</body>
+</html>
